@@ -22,7 +22,7 @@ object ChangeVal extends App {
   val instanceMirror = mirror.reflect(answer)
 
   val fieldX = typeOf[Answer].decl(scala.reflect.runtime.universe.TermName("x")).asTerm.accessed.asTerm
-  var fieldXinInstance = instanceMirror.reflectField(fieldX)
+  val fieldXinInstance = instanceMirror.reflectField(fieldX)
   fieldXinInstance.set(3)
 
   println(answer.x)
